@@ -20,20 +20,24 @@
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 require_once('../../config.php');
+require_once($CFG->dirroot. '/local/greetings/lib.php');
 
 $context = context_system::instance();
 $PAGE->set_context($context);
 $PAGE->set_url(new moodle_url('/local/greetings/index.php'));
-
 $PAGE->set_pagelayout('standard');
 $PAGE->set_title(get_string('pluginname', 'local_greetings'));
-
 $PAGE->set_heading(get_string('pluginname', 'local_greetings'));
 
+$string['greetinguserau'] = 'Hello, {$a}.';
+$string['greetinguseres'] = 'Hola, {$a}.';
+$string['greetinguserfj'] = 'Bula, {$a}.';
+$string['greetingusernz'] = 'Kia Ora, {$a}.';
+
 echo $OUTPUT->header();
-if (isloggedin()) {
-    echo '<h3>Greetings, ' . fullname($USER) . '</h3>';
-} else {
-    echo '<h3>Greetings, user</h3>';
-}
+
+echo local_greetings_get_greeting($USER);
+
+echo get_string('greetinguser', 'local_greetings');
+
 echo $OUTPUT->footer();
