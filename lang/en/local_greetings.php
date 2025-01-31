@@ -23,10 +23,9 @@
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+ defined('MOODLE_INTERNAL') || die();
 
-defined('MOODLE_INTERNAL') || die();
-
-$string['pluginname'] = 'Greetings Plugin';
-$string['greetinguser'] = 'Hello, user!';
-$string['greetinguseres'] = 'Hola, {$a}!';
-$string['greetingloggedinuser'] = 'Hello, {$a}! Welcome back!';
+ $string['greetinguser'] = 'Hello, user!';
+ $string['greetinguseres'] = 'Hola, {$a}!';
+ $string['greetingloggedinuser'] = 'Hello, {$a}! Welcome back!';
+ $string['pluginname'] = 'Greetings Plugin';
